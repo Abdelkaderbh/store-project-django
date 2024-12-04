@@ -6,7 +6,6 @@ from django.db import models
 
 
 class Fournisseur(models.Model):
-    supplier_id = models.CharField(max_length=50, unique=True)
     name = models.CharField(max_length=255)
     contact_info = models.TextField()
 
@@ -15,7 +14,6 @@ class Fournisseur(models.Model):
 
 
 class Categorie(models.Model):
-    category_id = models.CharField(max_length=50, unique=True)
     name = models.CharField(max_length=255)
     description = models.TextField()
 
@@ -24,7 +22,6 @@ class Categorie(models.Model):
 
 
 class Stock(models.Model):
-    stock_id = models.CharField(max_length=50, unique=True)
     product_name = models.CharField(max_length=255)
     quantity = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)

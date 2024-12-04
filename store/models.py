@@ -24,6 +24,7 @@ class Categorie(models.Model):
 class Stock(models.Model):
     product_name = models.CharField(max_length=255)
     quantity = models.IntegerField()
+    status = models.BooleanField(default=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.ForeignKey(Categorie, on_delete=models.CASCADE, related_name="stocks")
     fournisseur = models.ForeignKey(Fournisseur, on_delete=models.CASCADE,related_name='stocks',null=True)

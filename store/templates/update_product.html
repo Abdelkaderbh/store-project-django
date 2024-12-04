@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Update Product{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-gradient-secondary text-white">
+      <h4 class="mb-0 text-white">Update Product</h4>
+    </div>
+    <div class="card-body">
+      <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        <div class="row">
+          {% for field in form %}
+          <div class="col-md-6 mb-3">
+            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+              <div class="text-danger small">
+                {% for error in field.errors %}
+                  <span>{{ error }}</span><br>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-info">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

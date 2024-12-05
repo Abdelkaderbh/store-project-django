@@ -2,19 +2,19 @@ from django.contrib.auth.decorators import login_required
 from store.models import Stock
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Categorie, Fournisseur,Stock
-from .Forms import CategorieForm, FournisseurForm,ProductForm
+from .forms import CategorieForm, FournisseurForm,ProductForm
 
 @login_required
 def dashboard_view(request):
     total_products = Stock.objects.all().count()
     total_categories = Categorie.objects.all().count()
     total_suppliers = Fournisseur.objects.all().count()
-    return render (request,'dashboard.html',{'supps':total_suppliers,'categs':total_categories,'products':total_products})
+    return render (request,'dashboard.html',{'supps':total_suppliers,'categs':total_categories,'products':total_products, 'current_page': 'Dashboard'})
 
 @login_required
 def products_all_view(request):
     products = Stock.objects.all()
-    return render (request,'products.html',{'products':products})
+    return render (request,'products.html',{'products':products, 'current_page': 'Products'})
 
 @login_required
 def product_detail_view(request,product_id):
@@ -56,7 +56,7 @@ def edit_product(request, id):
 @login_required
 def category_list(request):
     categories = Categorie.objects.all()
-    return render(request, 'categories/category_list.html', {'categories': categories})
+    return render(request, 'categories/category_list.html', {'categories': categories, 'current_page': 'Categories'})
   
 @login_required
 def category_add(request):
@@ -90,7 +90,7 @@ def category_delete(request, pk):
 @login_required
 def supplier_list(request):
     suppliers = Fournisseur.objects.all()
-    return render(request, 'suppliers/supplier_list.html', {'suppliers': suppliers})
+    return render(request, 'suppliers/supplier_list.html', {'suppliers': suppliers, 'current_page': 'Suppliers'})
 
 @login_required
 def supplier_add(request):

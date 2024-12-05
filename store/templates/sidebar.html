@@ -21,39 +21,32 @@
     <ul class="navbar-nav">
       <li class="nav-item">
         <a
-          class="nav-link {% if request.path == '/dashboard/' %}bg-gradient-dark text-white{% else %}text-dark{% endif %}"
-          href="{% url 'dashboard' %}"
-          aria-pressed="{% if request.path == '/dashboard/' %}true{% else %}false{% endif %}"
-        >
+          class="nav-link {% if request.path == '/dashboard/' %}bg-gradient-dark text-white{% else %}text-secondary{% endif %}"
+          href="{% url 'dashboard' %} >
           <i class="material-symbols-rounded opacity-5">dashboard</i>
           <span class="nav-link-text ms-1">Dashboard</span>
         </a>
       </li>
       <li class="nav-item">
         <a
-          class="nav-link {% if request.path == '/products/' %}bg-gradient-dark text-white{% else %}text-dark{% endif %}"
-          href="{% url 'products' %}"
-          aria-pressed="{% if request.path == '/products/' %}true{% else %}false{% endif %}"
-        >
+          class="nav-link {% if request.path == '/products/' %}bg-gradient-dark text-white{% else %}text-secondary{% endif %}"
+          href="{% url 'products' %}" >
           <i class="material-symbols-rounded opacity-5">table_view</i>
           <span class="nav-link-text ms-1">Products</span>
         </a>
       </li>
       <li class="nav-item">
         <a
-          class="nav-link {% if request.path == '/billing/' %}bg-gradient-dark text-white{% else %}text-dark{% endif %}"
-          href="../pages/billing.html"
-          aria-pressed="{% if request.path == '/billing/' %}true{% else %}false{% endif %}"
-        >
+          class="nav-link {% if request.path == '/Suppliers/' %}bg-gradient-dark text-white{% else %}text-secondary{% endif %}"
+          href="{% url 'supplier_list' %} >
           <i class="material-symbols-rounded opacity-5">receipt_long</i>
           <span class="nav-link-text ms-1">Suppliers</span>
         </a>
       </li>
       <li class="nav-item">
         <a
-          class="nav-link {% if request.path == '/virtual-reality/' %}bg-gradient-dark text-white{% else %}text-dark{% endif %}"
-          href="../pages/virtual-reality.html"
-          aria-pressed="{% if request.path == '/virtual-reality/' %}true{% else %}false{% endif %}"
+          class="nav-link {% if request.path == '/categories/' %}bg-gradient-dark text-white{% else %}text-secondary{% endif %}"
+          href="{% url 'category_list' %}"
         >
           <i class="material-symbols-rounded opacity-5">view_in_ar</i>
           <span class="nav-link-text ms-1">Categories</span>

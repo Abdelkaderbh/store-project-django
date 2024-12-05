@@ -31,6 +31,7 @@ docker-compose.yml.override
 # Distribution / packaging
 .Python
 build/
+migrations
 develop-eggs/
 dist/
 downloads/

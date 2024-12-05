@@ -38,19 +38,13 @@
         </a>
       </li>
       <li class="nav-item">
-        <a
-          class="nav-link {% if request.path == '/billing/' %}bg-gradient-dark text-white{% else %}text-secondary{% endif %}"
-          href="../pages/billing.html"
-        >
+        <a class="nav-link text-dark" href={% url 'supplier_list' %}>
           <i class="material-symbols-rounded opacity-5">receipt_long</i>
           <span class="nav-link-text ms-1">Suppliers</span>
         </a>
       </li>
       <li class="nav-item">
-        <a
-          class="nav-link {% if request.path == '/categories/' %}bg-gradient-dark text-white{% else %}text-secondary{% endif %}"
-          href="../pages/virtual-reality.html"
-        >
+        <a class="nav-link text-dark" href={% url 'category_list' %}>
           <i class="material-symbols-rounded opacity-5">view_in_ar</i>
           <span class="nav-link-text ms-1">Categories</span>
         </a>

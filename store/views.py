@@ -10,3 +10,8 @@ def dashboard_view(request):
 def products_all_view(request):
     products = Stock.objects.all()
     return render (request,'products.html',{'products':products})
+
+@login_required
+def product_detail_view(request,product_id):
+    product = Stock.objects.get(id=product_id)
+    return render (request,'product_detail.html',{'product':product})

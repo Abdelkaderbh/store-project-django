@@ -6,6 +6,6 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-        path('', lambda request: redirect('dashboard/', permanent=False)),
+    path('', lambda request: redirect('dashboard/', permanent=False)),
     path('',include('store.urls')),
 ]

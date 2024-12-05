@@ -1,11 +1,14 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from store.models import Stock
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Categorie, Fournisseur
+from .models import Categorie, Fournisseur,Stock
 from .Forms import CategorieForm, FournisseurForm,ProductForm
 
 def dashboard_view(request):
-    return render (request,'dashboard.html')
+    total_products = Stock.objects.all().count()
+    total_categories = Categorie.objects.all().count()
+    total_suppliers = Fournisseur.objects.all().count()
+    return render (request,'dashboard.html',{'supps':total_suppliers,'categs':total_categories,'products':total_products})
 
 def products_all_view(request):
     products = Stock.objects.all()

@@ -40,7 +40,7 @@ def add_product(request):
         
     return render(request,'add.html',{'form':form})
 
- @login_required   
+@login_required   
 def edit_product(request, id):
     product = get_object_or_404(Stock, id=id)
     if request.method == "POST":
@@ -81,7 +81,7 @@ def category_edit(request, pk):
         form = CategorieForm(instance=category)
     return render(request, 'categories/category_edit.html', {'form': form})
 
- @login_required
+@login_required
 def category_delete(request, pk):
     category = get_object_or_404(Categorie, pk=pk)
     category.delete()
